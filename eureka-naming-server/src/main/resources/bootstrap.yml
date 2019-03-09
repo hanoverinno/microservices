@@ -1,0 +1,7 @@
+---
+# Name and port at ususal
+spring:
+  application:
+    name: eureka-naming-server
+    # configuration server uri
+  cloud:    config:      uri:      - http://localhost:9999

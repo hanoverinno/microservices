@@ -1,0 +1,15 @@
+#2 --> set the default port number
+# this could be overriden by adding { -Dserver.port=### } on running from cmd as an argument
+server:
+  port: 9999 
+spring:
+  application:
+    name: config-server
+#3.1 create a git account 
+#3.2 create a repository 
+#3.3 add here the uri of the repository
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/nesrin-abdulmaksoud/config-server-data
