@@ -12,10 +12,10 @@ import edu.ndsi.microservices.news.domain.bean.CountryBean;
 @FeignClient("zuul-gateway")
 public interface CountryProxy {
 
-	@GetMapping("/country-setting/countries")
+	@GetMapping("/setting/countries")
 	public List<CountryBean> retrieveAllCountries();
 	
-	@GetMapping("/country-setting/countries/{id}")
+	@GetMapping("/setting/countries/{id}")
 	public CountryBean retrieveCountryById(@PathVariable Long id) throws Exception;
 	
 }

@@ -35,8 +35,8 @@ public class SampleController {
 		return "Hello New World!";
 	}
 
-	@GetMapping("/author/{id}")
-	public Author retrieveAuthors(@PathVariable Long id) {
+	@GetMapping("/authors/{id}")
+	public Author retrieveAuthors(@PathVariable Long id) throws Exception {
 		Optional<Author> authorObj = authorRepository.findById(id);
 		Author author = authorObj.get();
 		log.info("{}", author);
