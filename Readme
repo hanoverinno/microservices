@@ -20,4 +20,4 @@ Next step
 Required to run the solution
 --------------------------------
 1- Install zipkin server : https://zipkin.io/
-2- Install  RabbitMQ : https://www.rabbitmq.com/download.html
+2- Install  RabbitMQ : https://www.rabbitmq.com/download.html (after installation add to rabbitmq-env file-> set NODE_IP_ADDRESS= "localhost")
