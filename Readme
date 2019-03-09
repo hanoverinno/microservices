@@ -1,0 +1,15 @@
+including working together now
+- Configuration server
+- Eureka Naming Server
+- Zuul Server
+- Setting Service (representing lookups required by other business services). It include Caching for unchangeable lookups using Ehcache
+
+Supported Features
+----------------------
+Servives Bus (Through RabbitMQ)
+Sleuth & Zipkin Client Logging (Through RabbitMQ)
+
+Next step
+
+- News services will work and call endpoints in setting server through Zuul using Feign Clients
+- Authentication Server (UAA)  with not allow unauthenticated requests
