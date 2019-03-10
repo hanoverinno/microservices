@@ -1,23 +1,26 @@
-Including working together now
---------------------------------
+
+A complete sample of Spring microservices on my repository now available.
+Including and working together: 
+------------------------------------
 - Configuration server
 - Eureka Naming Server
 - Zuul Server
-- Setting Service (representing lookups required by other business services). It include Caching for unchangeable lookups using Ehcache
-
+- Setting Service (representing lookups required by other business services). It includes Caching for unchangeable lookups using Ehcache and sample of Integration Testing
+- News service call endpoints in Setting service through Zuul using Feign Clients
 
 Supported Features
 --------------------------------
-Servives Bus (Through RabbitMQ)
+Service Bus (Through RabbitMQ)
 Sleuth & Zipkin Client Logging (Through RabbitMQ)
 
-
-Next step
+Next step working on
 --------------------------------
-- News services will work and call endpoints in setting server through Zuul using Feign Clients
-- Authentication Server (UAA)  with not allow unauthenticated requests
+
+- Authentication Server (oauth2 service)
 
 Required to run the solution
 --------------------------------
 1- Install zipkin server : https://zipkin.io/
-2- Install  RabbitMQ : https://www.rabbitmq.com/download.html (after installation add to rabbitmq-env file-> set NODE_IP_ADDRESS= "localhost")
+2- Install RabbitMQ : https://lnkd.in/drbDPhr
+
+#springboot #oauth #ehcache #microservices #rabbitmq 
