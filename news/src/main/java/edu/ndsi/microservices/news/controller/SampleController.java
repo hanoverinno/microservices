@@ -14,7 +14,6 @@ import edu.ndsi.microservices.news.domain.bean.CountryBean;
 import edu.ndsi.microservices.news.proxy.CountryProxy;
 import edu.ndsi.microservices.news.repository.AuthorRepository;
 import edu.ndsi.microservices.news.repository.FanRepository;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController

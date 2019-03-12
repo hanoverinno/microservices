@@ -23,55 +23,53 @@ import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 import lombok.ToString;
 
-@Entity 
+@Entity
 @Data
-@SequenceGenerator(name="SEQ_ARTICLE", allocationSize=1, initialValue=1)
+@SequenceGenerator(name = "SEQ_ARTICLE", allocationSize = 1, initialValue = 1)
 
-@SecondaryTables ({
-	@SecondaryTable(	name="article_content",
-		pkJoinColumns= {
-				@PrimaryKeyJoinColumn(name="article_id", referencedColumnName="id"	)
-		} ),
-	@SecondaryTable(	name="article_images",
-		pkJoinColumns= {
-				@PrimaryKeyJoinColumn(name="article_id", referencedColumnName="id"	)
-		}),
-})
+@SecondaryTables({
+		@SecondaryTable(name = "article_content", pkJoinColumns = {
+				@PrimaryKeyJoinColumn(name = "article_id", referencedColumnName = "id") }),
+		@SecondaryTable(name = "article_images", pkJoinColumns = {
+				@PrimaryKeyJoinColumn(name = "article_id", referencedColumnName = "id") }), })
 
 public class Article {
 
-	@Id	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ARTICLE")
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ARTICLE")
 	private Long id;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnoreProperties("articles")
 	@ToString.Exclude
 	private Author author;
-	
+
 	@Future
 	private Date publishDate;
 	private boolean approved;
-	
 
-	@Size(max=100, min=10)
+	@Size(max = 100, min = 10)
 	@NotBlank // used for string
 	private String title;
-	
-	@Lob @Column(table="article_content") @Basic(fetch= FetchType.LAZY)
+
+	@Lob
+	@Column(table = "article_content")
+	@Basic(fetch = FetchType.LAZY)
 	private String content; // lob + string fiels = Clob
-	
-	@Lob @Column(table="article_images") @Basic(fetch= FetchType.LAZY)
+
+	@Lob
+	@Column(table = "article_images")
+	@Basic(fetch = FetchType.LAZY)
 	private Byte[] mainImage; // lob+ array of bytes = Blob
 
-	@ElementCollection 	@Column(name="tag")
-	@CollectionTable(uniqueConstraints= @UniqueConstraint(columnNames={"article_id","tag"}))
-	private Set<String> tags;	
-	
+	@ElementCollection
+	@Column(name = "tag")
+	@CollectionTable(uniqueConstraints = @UniqueConstraint(columnNames = { "article_id", "tag" }))
+	private Set<String> tags;
+
 }

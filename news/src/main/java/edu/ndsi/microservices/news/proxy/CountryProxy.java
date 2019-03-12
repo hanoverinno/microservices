@@ -14,8 +14,8 @@ public interface CountryProxy {
 
 	@GetMapping("/setting/countries")
 	public List<CountryBean> retrieveAllCountries();
-	
+
 	@GetMapping("/setting/countries/{id}")
 	public CountryBean retrieveCountryById(@PathVariable Long id) throws Exception;
-	
+
 }

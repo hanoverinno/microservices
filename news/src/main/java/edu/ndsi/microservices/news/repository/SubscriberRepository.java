@@ -24,7 +24,7 @@ public interface SubscriberRepository extends JpaRepository<Subscriber, Long> {
 	List<Subscriber> findByFullNameAndActiveAndEmailAllIgnoreCase(String fn, boolean active, String e);
 
 	List<Subscriber> findByAdditionalDetailsCity(String city);
-	
-	//List<Subscriber> findByAdditionalDetailsCountry(Country country);
+
+	// List<Subscriber> findByAdditionalDetailsCountry(Country country);
 
 }

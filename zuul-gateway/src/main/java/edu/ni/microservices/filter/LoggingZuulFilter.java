@@ -3,6 +3,7 @@ package edu.ni.microservices.filter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.stereotype.Component;
 
 import com.netflix.zuul.ZuulFilter;
@@ -13,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class NewsZuulFilter extends ZuulFilter {
+public class LoggingZuulFilter extends ZuulFilter {
 
 	@Override
 	public boolean shouldFilter() {
@@ -23,15 +24,15 @@ public class NewsZuulFilter extends ZuulFilter {
 	@Override
 	public Object run() throws ZuulException {
 		HttpServletRequest request = RequestContext.getCurrentContext().getRequest();
-		log.info("\nRequestURL: {}  \nRemotePort: {}", request.getRequestURL(), request.getRemotePort());
 		HttpServletResponse response = RequestContext.getCurrentContext().getResponse();
-		log.info("\n response: {} ", response);
+		log.info("\nRequestURL: {}  \n RemotePort: {} \n Response: {} ", request.getRequestURL(),
+				request.getRemotePort(), response);
 		return null;
 	}
 
 	@Override
 	public String filterType() {
-		return "pre";
+		return FilterConstants.PRE_TYPE;
 	}
 
 	@Override

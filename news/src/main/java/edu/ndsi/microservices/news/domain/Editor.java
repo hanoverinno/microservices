@@ -11,5 +11,5 @@ import lombok.Data;
 public class Editor extends HiredSubscriber {
 
 	private BigDecimal ratePer500Word;
-	
+
 }

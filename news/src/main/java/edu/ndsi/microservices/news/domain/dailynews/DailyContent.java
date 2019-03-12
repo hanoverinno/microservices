@@ -12,18 +12,16 @@ import lombok.Data;
 
 @Entity
 @Data
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="content_type", discriminatorType=DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "content_type", discriminatorType = DiscriminatorType.STRING)
 
 public class DailyContent {
-	
+
 	@Id
 	private Long id;
-	
-	//@Column(length=1000)
-	@Size(max=1000)
+
+	// @Column(length=1000)
+	@Size(max = 1000)
 	private String content;
-	
-	
 
 }

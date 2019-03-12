@@ -17,7 +17,6 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import edu.ndsi.microservices.news.utils.Gender;
@@ -27,7 +26,7 @@ import lombok.Data;
 @Data
 @SequenceGenerator(name = "SEQ_SUBSCRIBER", allocationSize = 1, initialValue = 1)
 
-@Inheritance(strategy= InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 
 public class Subscriber {
 	@Id
@@ -35,7 +34,7 @@ public class Subscriber {
 	private Long id;
 
 	private String fullName;
-	
+
 	@Past
 	private Date subscriptionDate;
 	private boolean active;
@@ -43,16 +42,12 @@ public class Subscriber {
 	@Email
 	private String email;
 	private String password;
-	
+
 	@Enumerated(EnumType.STRING)
 	@ColumnDefault("'U'")
 	private Gender gender;
-	
-	@OneToOne(mappedBy="subscriber")
+
+	@OneToOne(mappedBy = "subscriber")
 	@JsonManagedReference
 	private SubscriberAdditionalDetails additionalDetails;
 }
-
-
-
-

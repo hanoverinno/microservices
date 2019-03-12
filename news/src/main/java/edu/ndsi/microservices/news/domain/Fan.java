@@ -12,19 +12,12 @@ import lombok.EqualsAndHashCode;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper=false)
-public class Fan extends Subscriber{
-	
-	private String description; 
-	
-	@ManyToMany(mappedBy="fans")
-	@JsonIgnore //static type of filtering
+@EqualsAndHashCode(callSuper = false)
+public class Fan extends Subscriber {
+
+	private String description;
+
+	@ManyToMany(mappedBy = "fans")
+	@JsonIgnore // static type of filtering
 	private Set<Author> authors;
 }
-
-
-
-
-
-
-

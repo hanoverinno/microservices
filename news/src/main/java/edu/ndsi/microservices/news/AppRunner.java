@@ -18,7 +18,7 @@ public class AppRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-//		log.info("\n=====================Start Call");
+		log.info("\n=====================Start Call");
 //		log.info("1- >>>> {}", countryService.getCountryById(30001l));
 //		log.info("2- >>>> {}", countryService.getCountryById(30001l));
 //		
@@ -40,7 +40,7 @@ public class AppRunner implements CommandLineRunner {
 //		log.info("7- >>>> {}", countryService.getCountryById(1l));
 //		log.info("8- >>>> {}", countryService.getCountryById(1l));
 //		
-//		log.info("\n====================End Call");
+		log.info("\n====================End Call");
 
 	}
 

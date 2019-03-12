@@ -4,7 +4,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue(value="BN")
-public class BreakingNews extends DailyContent{
+@DiscriminatorValue(value = "BN")
+public class BreakingNews extends DailyContent {
 
 }
