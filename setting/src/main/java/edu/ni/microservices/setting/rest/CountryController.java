@@ -27,11 +27,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CountryController {
 
-	@Autowired
-	private CountryService countryService;
+	private final CountryService countryService;
 
 	@Autowired
 	private Environment env;
+
+	@Autowired
+	public CountryController(CountryService countryService) {
+		this.countryService = countryService;
+	}
 
 	@GetMapping("/countries")
 	public List<Country> retrieveAllCountries() {
