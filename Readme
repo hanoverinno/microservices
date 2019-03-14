@@ -28,3 +28,12 @@ Required to run the solution
 2- Install RabbitMQ : https://lnkd.in/drbDPhr
 
 #springboot #oauth #ehcache #microservices #rabbitmq 
+
+-------------------------
+To run multiple instances of same profile in Setting service
+
+- remove property from profile in yml (or properties) file -> server.port 
+- on running the war (or jar) set the property -Dserver.port=xxxx example:  
+-> -Dspring.profiles.active=prod -Dserver.port=7012
+-> -Dspring.profiles.active=prod -Dserver.port=7011
+
