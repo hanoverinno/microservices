@@ -5,7 +5,11 @@ Including and working together:
 - Configuration server
 - Eureka Naming Server
 - Zuul Server
-- Setting Service (representing lookups required by other business services). It includes Caching for unchangeable lookups using Ehcache and sample of Integration Testing
+- Setting Service (representing lookups required by other business services). 
+    -- It includes Caching for unchangeable lookups using Ehcache 
+    -- Sample of Integration Testing
+    -- 'test' profile using H2 database
+    -- 'prod' profile using PostgreSQL database
 - News service call endpoints in Setting service through Zuul using Feign Clients
 
 Supported Features
